@@ -1,0 +1,29 @@
+swagger: "2.0"
+info:
+ description: This is the swagger file that goes with our server code
+ version: "1.0.0"
+ title: Swagger REST Article
+consumes:
+ - "application/json"
+produces:
+ - "application/json"
+basePath: "/api"
+
+# Paths supported by the server application
+paths:
+ /predict:
+  get:
+    operationId: "pipeline.predict"
+    tags:
+      - "Prediction"
+    summary: "Image data structure supported by the server application"
+    description: "Get mask prediction from Image"
+    responses:
+      200:
+        description: "Successfull get mask"
+        schema:
+          type: "array"
+          items:
+            properties:
+              image:
+                type: "array"
